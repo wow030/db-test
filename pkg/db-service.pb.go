@@ -24,93 +24,168 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type CreateRequest struct {
+type CreateUserRequest struct {
 	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *CreateRequest) Reset()         { *m = CreateRequest{} }
-func (m *CreateRequest) String() string { return proto.CompactTextString(m) }
-func (*CreateRequest) ProtoMessage()    {}
-func (*CreateRequest) Descriptor() ([]byte, []int) {
+func (m *CreateUserRequest) Reset()         { *m = CreateUserRequest{} }
+func (m *CreateUserRequest) String() string { return proto.CompactTextString(m) }
+func (*CreateUserRequest) ProtoMessage()    {}
+func (*CreateUserRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_bcc3a3b428a1e6de, []int{0}
 }
 
-func (m *CreateRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CreateRequest.Unmarshal(m, b)
+func (m *CreateUserRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateUserRequest.Unmarshal(m, b)
 }
-func (m *CreateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CreateRequest.Marshal(b, m, deterministic)
+func (m *CreateUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateUserRequest.Marshal(b, m, deterministic)
 }
-func (m *CreateRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateRequest.Merge(m, src)
+func (m *CreateUserRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateUserRequest.Merge(m, src)
 }
-func (m *CreateRequest) XXX_Size() int {
-	return xxx_messageInfo_CreateRequest.Size(m)
+func (m *CreateUserRequest) XXX_Size() int {
+	return xxx_messageInfo_CreateUserRequest.Size(m)
 }
-func (m *CreateRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateRequest.DiscardUnknown(m)
+func (m *CreateUserRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateUserRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CreateRequest proto.InternalMessageInfo
+var xxx_messageInfo_CreateUserRequest proto.InternalMessageInfo
 
-func (m *CreateRequest) GetName() string {
+func (m *CreateUserRequest) GetName() string {
 	if m != nil {
 		return m.Name
 	}
 	return ""
 }
 
-type CreateReply struct {
+type CreateUserReply struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *CreateReply) Reset()         { *m = CreateReply{} }
-func (m *CreateReply) String() string { return proto.CompactTextString(m) }
-func (*CreateReply) ProtoMessage()    {}
-func (*CreateReply) Descriptor() ([]byte, []int) {
+func (m *CreateUserReply) Reset()         { *m = CreateUserReply{} }
+func (m *CreateUserReply) String() string { return proto.CompactTextString(m) }
+func (*CreateUserReply) ProtoMessage()    {}
+func (*CreateUserReply) Descriptor() ([]byte, []int) {
 	return fileDescriptor_bcc3a3b428a1e6de, []int{1}
 }
 
-func (m *CreateReply) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CreateReply.Unmarshal(m, b)
+func (m *CreateUserReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateUserReply.Unmarshal(m, b)
 }
-func (m *CreateReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CreateReply.Marshal(b, m, deterministic)
+func (m *CreateUserReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateUserReply.Marshal(b, m, deterministic)
 }
-func (m *CreateReply) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateReply.Merge(m, src)
+func (m *CreateUserReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateUserReply.Merge(m, src)
 }
-func (m *CreateReply) XXX_Size() int {
-	return xxx_messageInfo_CreateReply.Size(m)
+func (m *CreateUserReply) XXX_Size() int {
+	return xxx_messageInfo_CreateUserReply.Size(m)
 }
-func (m *CreateReply) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateReply.DiscardUnknown(m)
+func (m *CreateUserReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateUserReply.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_CreateReply proto.InternalMessageInfo
+var xxx_messageInfo_CreateUserReply proto.InternalMessageInfo
+
+type GetUserRequest struct {
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetUserRequest) Reset()         { *m = GetUserRequest{} }
+func (m *GetUserRequest) String() string { return proto.CompactTextString(m) }
+func (*GetUserRequest) ProtoMessage()    {}
+func (*GetUserRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_bcc3a3b428a1e6de, []int{2}
+}
+
+func (m *GetUserRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetUserRequest.Unmarshal(m, b)
+}
+func (m *GetUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetUserRequest.Marshal(b, m, deterministic)
+}
+func (m *GetUserRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetUserRequest.Merge(m, src)
+}
+func (m *GetUserRequest) XXX_Size() int {
+	return xxx_messageInfo_GetUserRequest.Size(m)
+}
+func (m *GetUserRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetUserRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetUserRequest proto.InternalMessageInfo
+
+func (m *GetUserRequest) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type GetUserReply struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetUserReply) Reset()         { *m = GetUserReply{} }
+func (m *GetUserReply) String() string { return proto.CompactTextString(m) }
+func (*GetUserReply) ProtoMessage()    {}
+func (*GetUserReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_bcc3a3b428a1e6de, []int{3}
+}
+
+func (m *GetUserReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetUserReply.Unmarshal(m, b)
+}
+func (m *GetUserReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetUserReply.Marshal(b, m, deterministic)
+}
+func (m *GetUserReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetUserReply.Merge(m, src)
+}
+func (m *GetUserReply) XXX_Size() int {
+	return xxx_messageInfo_GetUserReply.Size(m)
+}
+func (m *GetUserReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetUserReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetUserReply proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*CreateRequest)(nil), "db.CreateRequest")
-	proto.RegisterType((*CreateReply)(nil), "db.CreateReply")
+	proto.RegisterType((*CreateUserRequest)(nil), "db.CreateUserRequest")
+	proto.RegisterType((*CreateUserReply)(nil), "db.CreateUserReply")
+	proto.RegisterType((*GetUserRequest)(nil), "db.GetUserRequest")
+	proto.RegisterType((*GetUserReply)(nil), "db.GetUserReply")
 }
 
 func init() { proto.RegisterFile("pkg/db-service.proto", fileDescriptor_bcc3a3b428a1e6de) }
 
 var fileDescriptor_bcc3a3b428a1e6de = []byte{
-	// 127 bytes of a gzipped FileDescriptorProto
+	// 166 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x29, 0xc8, 0x4e, 0xd7,
 	0x4f, 0x49, 0xd2, 0x2d, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c, 0x4e, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9,
-	0x17, 0x62, 0x4a, 0x49, 0x52, 0x52, 0xe6, 0xe2, 0x75, 0x2e, 0x4a, 0x4d, 0x2c, 0x49, 0x0d, 0x4a,
-	0x2d, 0x2c, 0x4d, 0x2d, 0x2e, 0x11, 0x12, 0xe2, 0x62, 0xc9, 0x4b, 0xcc, 0x4d, 0x95, 0x60, 0x54,
-	0x60, 0xd4, 0xe0, 0x0c, 0x02, 0xb3, 0x95, 0x78, 0xb9, 0xb8, 0x61, 0x8a, 0x0a, 0x72, 0x2a, 0x8d,
-	0x4c, 0xb8, 0x98, 0x5c, 0x9c, 0x84, 0xf4, 0xb8, 0xd8, 0x20, 0x82, 0x42, 0x82, 0x7a, 0x29, 0x49,
-	0x7a, 0x28, 0xa6, 0x48, 0xf1, 0x23, 0x0b, 0x15, 0xe4, 0x54, 0x2a, 0x31, 0x24, 0xb1, 0x81, 0x2d,
-	0x35, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff, 0x26, 0x72, 0xd5, 0x2c, 0x8c, 0x00, 0x00, 0x00,
+	0x17, 0x62, 0x4a, 0x49, 0x52, 0x52, 0xe7, 0x12, 0x74, 0x2e, 0x4a, 0x4d, 0x2c, 0x49, 0x0d, 0x2d,
+	0x4e, 0x2d, 0x0a, 0x4a, 0x2d, 0x2c, 0x4d, 0x2d, 0x2e, 0x11, 0x12, 0xe2, 0x62, 0xc9, 0x4b, 0xcc,
+	0x4d, 0x95, 0x60, 0x54, 0x60, 0xd4, 0xe0, 0x0c, 0x02, 0xb3, 0x95, 0x04, 0xb9, 0xf8, 0x91, 0x15,
+	0x16, 0xe4, 0x54, 0x2a, 0xa9, 0x70, 0xf1, 0xb9, 0xa7, 0x96, 0x10, 0xd2, 0xc8, 0xc7, 0xc5, 0x03,
+	0x57, 0x55, 0x90, 0x53, 0x69, 0x54, 0xcc, 0xc5, 0xe4, 0xe2, 0x24, 0x64, 0xc5, 0xc5, 0x85, 0x30,
+	0x4e, 0x48, 0x54, 0x2f, 0x25, 0x49, 0x0f, 0xc3, 0x1d, 0x52, 0xc2, 0xe8, 0xc2, 0x20, 0x5b, 0x19,
+	0x84, 0x0c, 0xb9, 0xd8, 0xa1, 0x26, 0x0a, 0x09, 0x81, 0x54, 0xa0, 0x3a, 0x42, 0x4a, 0x00, 0x45,
+	0x0c, 0xac, 0x25, 0x89, 0x0d, 0xec, 0x63, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x29, 0x3f,
+	0xda, 0x49, 0x09, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -125,7 +200,8 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DBClient interface {
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateReply, error)
+	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserReply, error)
+	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserReply, error)
 }
 
 type dBClient struct {
@@ -136,9 +212,18 @@ func NewDBClient(cc *grpc.ClientConn) DBClient {
 	return &dBClient{cc}
 }
 
-func (c *dBClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateReply, error) {
-	out := new(CreateReply)
-	err := c.cc.Invoke(ctx, "/db.DB/Create", in, out, opts...)
+func (c *dBClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserReply, error) {
+	out := new(CreateUserReply)
+	err := c.cc.Invoke(ctx, "/db.DB/CreateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dBClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserReply, error) {
+	out := new(GetUserReply)
+	err := c.cc.Invoke(ctx, "/db.DB/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -147,35 +232,57 @@ func (c *dBClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.C
 
 // DBServer is the server API for DB service.
 type DBServer interface {
-	Create(context.Context, *CreateRequest) (*CreateReply, error)
+	CreateUser(context.Context, *CreateUserRequest) (*CreateUserReply, error)
+	GetUser(context.Context, *GetUserRequest) (*GetUserReply, error)
 }
 
 // UnimplementedDBServer can be embedded to have forward compatible implementations.
 type UnimplementedDBServer struct {
 }
 
-func (*UnimplementedDBServer) Create(ctx context.Context, req *CreateRequest) (*CreateReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+func (*UnimplementedDBServer) CreateUser(ctx context.Context, req *CreateUserRequest) (*CreateUserReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
+}
+func (*UnimplementedDBServer) GetUser(ctx context.Context, req *GetUserRequest) (*GetUserReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
 }
 
 func RegisterDBServer(s *grpc.Server, srv DBServer) {
 	s.RegisterService(&_DB_serviceDesc, srv)
 }
 
-func _DB_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateRequest)
+func _DB_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DBServer).Create(ctx, in)
+		return srv.(DBServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/db.DB/Create",
+		FullMethod: "/db.DB/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DBServer).Create(ctx, req.(*CreateRequest))
+		return srv.(DBServer).CreateUser(ctx, req.(*CreateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DB_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DBServer).GetUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/db.DB/GetUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DBServer).GetUser(ctx, req.(*GetUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -185,8 +292,12 @@ var _DB_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*DBServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Create",
-			Handler:    _DB_Create_Handler,
+			MethodName: "CreateUser",
+			Handler:    _DB_CreateUser_Handler,
+		},
+		{
+			MethodName: "GetUser",
+			Handler:    _DB_GetUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

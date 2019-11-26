@@ -7,6 +7,8 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
+var _ UserDAO = (*DAO)(nil)
+
 type DAO struct {
 	db *gorm.DB
 }
@@ -20,4 +22,12 @@ func CreateDAO() *DAO {
 	return &DAO{
 		db: db,
 	}
+}
+
+func (d *DAO) CreateUser(user CreateUserOption) error {
+	panic("implement me")
+}
+
+func (d *DAO) GetUser(user GetUserOption) (User, error) {
+	panic("implement me")
 }

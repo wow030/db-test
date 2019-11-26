@@ -21,7 +21,7 @@ func (suite *ServiceTestSuite) SetupSuite() {
 }
 
 func (suite *ServiceTestSuite) TestCreate() {
-	_, err := suite.svc.Create(context.Background(), &pb.CreateRequest{})
+	_, err := suite.svc.CreateUser(context.Background(), &pb.CreateUserRequest{})
 	assert.NoError(suite.T(), err)
 }
 

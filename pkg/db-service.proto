@@ -3,14 +3,22 @@ syntax = "proto3";
 package db;
 
 service DB {
-    rpc Create(CreateRequest) returns (CreateReply) {}
+    rpc CreateUser(CreateUserRequest) returns (CreateUserReply) {}
+    rpc GetUser(GetUserRequest) returns (GetUserReply) {}
 }
 
 
-message CreateRequest {
+message CreateUserRequest {
     string name = 1;
 }
 
-message CreateReply {
+message CreateUserReply {
+}
+
+message GetUserRequest {
+    string name = 1;
+}
+
+message GetUserReply {
 }
 
