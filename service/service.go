@@ -12,8 +12,8 @@ type Service struct {
 	dao *database.DAO
 }
 
-func CreateService(dao database.DAO) *Service {
-	return &Service{
+func CreateService(dao database.DAO) Service {
+	return Service{
 		dao: &dao,
 	}
 }

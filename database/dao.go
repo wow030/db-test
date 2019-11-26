@@ -26,7 +26,11 @@ func CreateDAO() DAO {
 }
 
 func (d *DAO) CreateUser(user CreateUserOption) error {
-	panic("implement me")
+	err := d.db.Create(&User{Name: user.Name}).Error
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func (d *DAO) GetUser(user GetUserOption) (User, error) {
