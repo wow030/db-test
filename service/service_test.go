@@ -2,6 +2,7 @@ package service_test
 
 import (
 	"context"
+	"db-test/database"
 	pb "db-test/pkg"
 	"db-test/service"
 	"testing"
@@ -17,7 +18,8 @@ type ServiceTestSuite struct {
 }
 
 func (suite *ServiceTestSuite) SetupSuite() {
-	suite.svc = service.CreateService()
+	dao := database.CreateDAO()
+	suite.svc = service.CreateService(dao)
 }
 
 func (suite *ServiceTestSuite) TestCreate() {
