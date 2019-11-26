@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package db;
+
+service DB {
+    rpc Create(CreateRequest) returns (CreateReply) {}
+}
+
+
+message CreateRequest {
+    string name = 1;
+}
+
+message CreateReply {
+}
+
