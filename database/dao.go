@@ -13,16 +13,21 @@ type DAO struct {
 	db *gorm.DB
 }
 
-func CreateDAO() DAO {
-	db, err := gorm.Open("postgres", "host=myhost port=myport user=gorm dbname=gorm password=mypassword")
-	if err != nil {
-		log.Println("open db error")
-		return DAO{}
-	}
+func CreateDAO(db *gorm.DB) *DAO {
 
-	return DAO{
+	return &DAO{
 		db: db,
 	}
+}
+
+func CreateConn() *gorm.DB {
+	db, err := gorm.Open("postgres", "host=myhost port=myport user=gorm dbname=gorm password=mypassword sslmode=false")
+	if err != nil {
+		log.Println("open db error")
+		return nil
+	}
+
+	return db
 }
 
 func (d *DAO) CreateUser(user CreateUserOption) error {

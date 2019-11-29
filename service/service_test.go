@@ -18,7 +18,8 @@ type ServiceTestSuite struct {
 }
 
 func (suite *ServiceTestSuite) SetupSuite() {
-	dao := database.CreateDAO()
+
+	dao := database.CreateDAO(database.CreateConn())
 	suite.svc = service.CreateService(dao)
 }
 

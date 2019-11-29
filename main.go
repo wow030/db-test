@@ -18,7 +18,7 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	dao := database.CreateDAO()
+	dao := database.CreateDAO(database.CreateConn())
 	svc := service.CreateService(dao)
 
 	grpcServer := grpc.NewServer()

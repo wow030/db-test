@@ -12,9 +12,9 @@ type Service struct {
 	dao *database.DAO
 }
 
-func CreateService(dao database.DAO) Service {
-	return Service{
-		dao: &dao,
+func CreateService(dao *database.DAO) *Service {
+	return &Service{
+		dao: dao,
 	}
 }
 
