@@ -1,10 +1,19 @@
 package database
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+)
+
+const (
+	dbHost     = "localhost"
+	dbPort     = "5432"
+	dbUser     = "postgres"
+	dbName     = "postgres"
+	dbPassword = "pass"
 )
 
 var _ UserDAO = (*DAO)(nil)
@@ -21,7 +30,9 @@ func CreateDAO(db *gorm.DB) *DAO {
 }
 
 func CreateConn() *gorm.DB {
-	db, err := gorm.Open("postgres", "host=myhost port=myport user=gorm dbname=gorm password=mypassword sslmode=false")
+	db, err := gorm.Open("postgres",
+		fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=false",
+			dbHost, dbPort, dbUser, dbName, dbPassword))
 	if err != nil {
 		log.Println("open db error")
 		return nil
