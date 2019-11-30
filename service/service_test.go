@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 
 	"github.com/stretchr/testify/assert"
 
@@ -18,7 +19,7 @@ import (
 )
 
 const (
-	dbHost     = "127.0.0.1"
+	dbHost     = "localhost"
 	dbPort     = "5432"
 	dbUser     = "postgres"
 	dbName     = "postgres"
@@ -35,17 +36,16 @@ func (suite *ServiceTestSuite) SetupSuite() {
 
 	var db *gorm.DB
 	var err error
-	for i := 1; i <= maxRetry; i++ {
-		db, err = gorm.Open("postgres",
-			fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=false",
-				dbHost, dbPort, dbUser, dbName, dbPassword))
+	connection := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=disable",
+		dbHost, dbPort, dbUser, dbName, dbPassword)
+	fmt.Println(connection)
+	for i := 0; i < maxRetry; i++ {
+		db, err = gorm.Open("postgres", connection)
 		if err != nil {
-			log.Printf("can't create db, sleep %d second", i)
+			log.Println(err.Error())
+			log.Printf("can't connect db, sleep %d second", i)
 			time.Sleep(time.Duration(i) * time.Second)
-		} else {
-			break
 		}
-
 	}
 	dao := database.CreateDAO(db)
 	suite.svc = service.CreateService(dao)

@@ -23,6 +23,10 @@ type DAO struct {
 }
 
 func CreateDAO(db *gorm.DB) *DAO {
+	if err := db.AutoMigrate(&User{}).Error; err != nil {
+		log.Printf("failed to migrate schema")
+		return nil
+	}
 
 	return &DAO{
 		db: db,
