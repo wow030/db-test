@@ -42,11 +42,14 @@ func CreateConn() *gorm.DB {
 		return nil
 	}
 
+	db.LogMode(true)
+
 	return db
 }
 
 func (d *DAO) CreateUser(user CreateUserOption) error {
 	err := d.db.Create(&User{Name: user.Name}).Error
+
 	if err != nil {
 		return err
 	}

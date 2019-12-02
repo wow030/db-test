@@ -24,7 +24,7 @@ const (
 	dbUser     = "postgres"
 	dbName     = "postgres"
 	dbPassword = "pass"
-	maxRetry   = 5
+	maxRetry   = 10
 )
 
 type ServiceTestSuite struct {
@@ -52,7 +52,7 @@ func (suite *ServiceTestSuite) SetupSuite() {
 }
 
 func (suite *ServiceTestSuite) TestCreate() {
-	_, err := suite.svc.CreateUser(context.Background(), &pb.CreateUserRequest{})
+	_, err := suite.svc.CreateUser(context.Background(), &pb.CreateUserRequest{Name: "123123"})
 	assert.NoError(suite.T(), err)
 }
 
